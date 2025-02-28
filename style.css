@@ -1,0 +1,291 @@
+.text2{
+  transition: 0.3s ease-in-out;
+}
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+#text {
+  color: #8d94a0; /* начальный цвет */
+}
+header{
+  display: flex;
+  width: 100%;
+  max-width: 100%; /* увеличенная максимальная ширина */
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 0 20px;
+
+}
+.pocelui{
+  width: 20px;
+  height: 20px;
+  align-items: right center;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* выравнивание по горизонтали */
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px; /* увеличенная максимальная ширина */
+  margin-top: 150px;
+  
+  padding: 0 20px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  text-align: center;
+  background-image: url('2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+#startBtn{
+  margin-top:15%;
+
+}
+.text3{
+  margin-bottom: 50px;
+  font-size: 24px;
+  font-weight: bold;
+}
+section {
+  margin-bottom: 20px;
+}
+
+/* Контейнер для шагов с фиксированным положением */
+.steps-container {
+  position: relative;
+  width: 100%;
+  /* увеличенная ширина */
+  height: 800px;    /* увеличенная высота контейнера */
+  margin-bottom: 20px;
+  overflow: hidden; /* скрывает лишнее */
+}
+
+/* Каждый шаг занимает весь контейнер */
+.steps-container section {
+  position: absolute;
+  top: 1;
+  left: 0;
+  width: 100%;
+  height: 800px;
+  margin-top: 20px;
+}
+
+/* Новый контейнер для контента шага 3 */
+.step3-content {
+  
+  z-index: 1;
+  padding: 20px;
+  height: 800px;
+  width: 100%;
+  overflow-y: auto;
+}
+
+/* Стили для кастомного плеера */
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  width: 330px;
+  margin: 0 auto 20px;
+  background: #a0a6ac;
+  transition: background 0.5s ease-in-out;
+}
+
+/* Если на body класс dark – фон плеера #bf9d8f */
+body.dark .player {
+  background: #bf9d8f;
+}
+
+/* Если на body класс light – фон плеера #a0a6ac */
+body.light .player {
+  background: #62737d;
+}
+
+.track-info {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.button {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #8d94a0;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 15px;
+  font-weight: bold;
+  padding: 0 auto 20px;
+}
+
+.player .button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1em;
+
+}
+
+.button:before {
+  content: '';
+  background: linear-gradient(45deg, #8986bf, #c23c3c, #8986bf);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  filter: blur(50px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.button:active {
+  color: #000;
+}
+
+.button:active:after {
+  background: transparent;
+}
+
+.button:hover:before {
+  opacity: 1;
+}
+
+.button:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgn(105, 105, 105);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+.progress-container {
+  background: #333;
+  height: 8px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.progress-bar {
+  background: #ff5722;
+  height: 100%;
+  width: 0;
+  border-radius: 5px;
+}
+
+.time-info {
+  font-size: 0.9em;
+}
+
+#songList ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+#songList li {
+  cursor: pointer;
+  padding: 5px 0;
+}
+
+#songList li:hover {
+  color: #ff5722;
+}
+
+.fade {
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+#toggleButton{
+  width:50px;
+  border-radius: 50%;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+h1{
+  margin:5%;
+}
+#nextBtn1{
+  margin:5%;
+}
+.controls{
+  display: flex;
+  gap: 30px;
+}
+#volumeSlider {
+    width: 150px;
+    appearance: none;
+    height: 6px;
+    background: #ddd;
+    border-radius: 3px;
+    outline: none;
+}
+
+#volumeSlider::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: black;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#volumeSlider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: black;
+    border-radius: 50%;
+    cursor: pointer;
+}

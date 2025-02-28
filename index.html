@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru" id="text">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Для моей любимки</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <header> 
+    <button class="button" id="toggleButton">🔅</button>
+</header>
+<head>
+  <main>
+    
+    <div class="steps-container">
+      <section id="step1">
+        <button id="startBtn" class="button">Нажми на меня</button>
+      </section>
+
+      <section id="step2" class="hidden">
+        <h1>Дорогая моя Зайка</h1>
+        <p class="text2" >
+          Хочу поздравить тебя с твоим персональным праздником!🎉 <br>
+          Пусть в этот день принесет тебе море радости, теплые улыбки и самые приятные моменты.<br>
+          Оставайся таким же красивым и милым котенком, окруженным любовью, счастьем и удачей.<br>
+          Пусть все мечты сбываются, а каждый день приносит новый повод для радости!💖🎂✨
+        </p>
+        <button id="nextBtn1" class="button">Нажми еще))</button>
+      </section>
+
+      <section id="step3" class="hidden">
+        <div class="step3-content">
+          <p class="text3">
+            Люблю тебя, моё сокровище <img class="pocelui" src="1.png" alt="Поцелуй">
+          </p>
+          
+          <!-- Кастомный аудио плеер -->
+          <div class="player">
+            <div class="track-info">
+              <span id="trackTitle">Выберите трек</span>
+            </div>
+            <div class="controls">
+              <button id="prevBtn" class="button">⏮</button>
+              <button id="playPauseBtn" class="button">▶️</button>
+              <button id="nextBtn" class="button">⏭</button>
+            </div>
+            <div class="progress-container">
+              <div id="progressBar" class="progress-bar"></div>
+            </div>
+            <div class="time-info">
+              <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
+            </div>
+            <div class="volume-control">
+              <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+              </div>
+          </div>
+          
+          <!-- Список треков -->
+          <section id="songList">
+            <ul>
+              <li data-src="deaf - sunset city.mp3">deaf - sunset city</li>
+              <li data-src="Giwmik - Дубай.mp3">Giwmik - Дубай</li>
+              <li data-src="Тото - Растабойшан.mp3">Тото - Растабойшан</li>
+              <li data-src="keendy - Истина.mp3">keendy - Истина</li>
+              <li data-src="Loqiemean - Самовывоз.mp3">Loqiemean - Самовывоз</li>
+              <li data-src="Miyagi - Brooklyn.mp3">Miyagi - Brooklyn</li>
+              <li data-src="Miyagi - Самурай.mp3">Miyagi - Самурай</li>
+              <li data-src="Boulevard Depo - Кащенко.mp3">Boulevard Depo - Кащенко</li>
+              <li data-src="Boulevard Depo - ТЫНЕТАНК.mp3">Boulevard Depo - ТЫНЕТАНК</li>
+              <li data-src="Noize_MC_Egoizm.mp3">Noize_MC_Egoizm</li>
+              <li data-src="suicideboy - 666 FOREVER.mp3">suicideboy - 666 FOREVER</li>
+              <li data-src="miyagi - tandem.mp3">miyagi - tandem</li>
+              <li data-src="Timberlake - Bones.mp3">Timberlake - Bones</li>
+              <li data-src="ЛСП & Pharaoh - Неон.mp3">ЛСП & Pharaoh - Неон</li>
+              <li data-src="Mnogoznaal - Просто Элемент.mp3">Mnogoznaal - Просто Элемент</li>
+              <li data-src="Почти счастье - Зрачки.mp3">Почти счастье - Зрачки</li>
+              <li data-src="Pakkitka - В п янім танці.mp3">Pakkitka - В п'янім танці</li>
+              <li data-src="$uicideboy$ - Antarctica.mp3">$uicideboy$ - Antarctica </li>
+              <li data-src="$uicideboy$ - Gold.mp3">$uicideboy$ - Gold </li>
+              <li data-src="Lewis Del Mar - Loud(y).mp3">Lewis Del Mar - Loud(y) </li>
+              <li data-src="Hippie Sabotage - Running Miles.mp3">Hippie Sabotage - Running Miles </li>
+              <li data-src="REDZED - STRAIGHT OUTTA FLAMES.mp3">REDZED - STRAIGHT OUTTA FLAMES </li>
+              <li data-src="REDZED - Rave in the Grave.mp3">REDZED - Rave in the Grave </li>
+              <li data-src="Nakani - Smiling Faces.mp3">Nakani - Smiling Faces </li>
+              <li data-src="Loqiemean - Лоботомия.mp3">Loqiemean - Лоботомия </li>
+              <li data-src="Disclosure feat. Sam Smith - Latch.mp3">Disclosure feat. Sam Smith - Latch </li>
+            </ul>
+          </section>
+          <!-- Аудиоэлемент для плеера -->
+          <audio id="audioPlayer"></audio>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
